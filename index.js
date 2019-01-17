@@ -18,5 +18,6 @@ app.get( '/',(req,res) => {
 })
 
 require('./app/routes/auth.routes')(app) // We can also use the router provided by Express
+require('./app/routes/event.routes')(app)
 
 app.listen(2000)

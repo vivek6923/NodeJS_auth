@@ -4,8 +4,8 @@ const jwt = require('jsonwebtoken');
 
 exports.signup = (req, res) => {
 
-  // We can use express-validator package or joi package for the input validation. 
-  // I am applying validations manually
+  // We can use express-validator package or joi package for the input validation for more particular validation error messages. 
+  // For now I am applying validations manually
 
   const username = req.body.username
   const password = req.body.password
@@ -22,8 +22,8 @@ exports.signup = (req, res) => {
   }
 
     const user = new User({
-      username: req.body.username,
-      password: req.body.password,  // I usually use bcrypt to hash the password before saving it to database 
+      username: username,
+      password: password,  // I usually use bcrypt to hash the password before saving it to database 
       name:req.body.name
     });
 
